@@ -1,0 +1,11 @@
+version: '2'
+services:
+  cassandra:
+    image: cassandra
+    container_name: cassandra
+  cassandra_node:
+    image: cassandra
+    environment:
+      - 'CASSANDRA_SEEDS=cassandra'
+    depends_on:
+      - cassandra
